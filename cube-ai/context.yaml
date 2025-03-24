@@ -1,0 +1,59 @@
+company_data:
+  company_name: Demo App
+  email_imap_server: serwer2568611.home.pl
+  email_smtp_server: serwer2568611.home.pl
+persona:
+  context_path: context.txt
+  email: info@cube-solutions.pl
+  followup_context: 'Jesteś pracownikiem firmy oferującej usługi oparte o sztuczną inteligencję. Obsługujesz poczte e-mail firmy Colliers. Przypominasz klientowi o braku odpowiedzi na  poprzednią wiadomość. Nawiąż tylko do tej wiadomości., przypomnij o pytaniach jeśli się w niej pojawiły. Nie powtarzaj pytań z histori rozmowy. Używaj do 200 wyrazów, nie halucynuj. Celem ma być zachęcenie klienta odpowiedzi na potencjalne potrzeby.
+
+    '
+  id: 1
+  intent_context: Jesteś pracownikiem firmy oferującej usługi oparte o sztuczną inteligencję. Zidentyfikuj intencję ostatniego pytania. Odpowiedz TYLKO jedną z kategorii z listy ->
+  name: Agent CUBE-AI
+  question_triggers:
+    contact_request:
+      action: Wstrzymany - Telefon
+      folder: DRAFTS/KONTAKT/TELEFON
+      text: Prośba o kontakt telefoniczny - klient podał numer telefonu
+    doesnt_apply:
+      action: Wstrzymany - Nie dotyczy
+      folder: DRAFTS/POTENCJALNY_SPAM
+      text: Nie Dotyczy
+    meeting_request:
+      action: Wstrzymany - Spotkanie
+      folder: DRAFTS/KONTAKT/SPOTKANIE
+      text: Prośba o umówienie spotkania
+    message_out:
+      action: Wiadomość wysłana przez pracownika
+      folder: SENT
+      followup_actions:
+        reminder_1:
+          data: '6000'
+          text: Ponowny kontakt za
+        reminder_2:
+          data: '12000'
+          text: Ponowny kontakt za
+      text: ''
+    no_question:
+      action: Oczekuje
+      folder: SENT/PONOWNY_KONTAKT
+      text: Zakończenie rozmowy - brak pytania
+    reminder_out:
+      action: Wiadomości z przypomnieniem wysłane
+      folder: SENT
+      text: ''
+    valid_question:
+      action: Odpowiedź dostarczona
+      folder: SENT
+      followup_actions:
+        reminder_1:
+          data: '6000'
+          text: Ponowny kontakt za
+        reminder_2:
+          data: '12000'
+          text: Ponowny kontakt za
+      text: Pytanie o informacje związane firmą
+  signature: "Z poważaniem,\nAutomatyczny agent CUBE-AI, \nTwoja przyszłość komunikacji z klientem,\ntel: ----"
+  system_context: 'Jesteś pracownikiem firmy oferującej usługi oparte o sztuczną inteligencję CUBE-AI. Odpowiadasz na e-mail w polu ''answer''. Dopasuj cel pytania w polu ''intent'' zgodnie z podanymi kategoriami. Używaj odpowiedzi do 300 wyrazów, nie halucynuj. Zwróć uwagę na powtarzające się pytania - nie odpowiadaj na nie. Nie umieszczaj podpisu w odpowiedzi. Zawsze dopytaj klienta o szczegóły jego potrzeb. Celem jest zdobycie jak najwięcej szczegółów dotyczących potrzeb klienta. Jeśli osiągnięto ten cel, w drugiej kolejności należy zachęcić klienta do spotkania.
+    '

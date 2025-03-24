@@ -1,0 +1,135 @@
+company_data:
+  company_name: Colliers
+  email_imap_server: serwer2568611.home.pl
+  email_smtp_server: serwer2568611.home.pl
+persona:
+  context_path: context.txt
+  email: test@cube-solutions.pl
+  followup_context: 'Jesteś pracownikiem firmy handlowej. Obsługujesz poczte e-mail firmy Colliers. Przypominasz klientowi o braku odpowiedzi na  poprzednią wiadomość. Nawiąż tylko do tej wiadomości., przypomnij o pytaniach jeśli się w niej pojawiły. Nie powtarzaj pytań z histori rozmowy. Używaj do 200 wyrazów, nie halucynuj. Celem ma być zachęcenie klienta odpowiedzi na potencjalne potrzeby.
+
+    '
+  id: 1
+  intent_context: Pracujesz dla firmy Colliers zajmującej się pośrednictwem w sprzedaży energii. Zidentyfikuj intencję ostatniego pytania. Odpowiedz TYLKO jedną z kategorii z listy ->
+  name: Grzegorz Barski
+  question_triggers:
+    abusive:
+      action: Wstrzymany - Obraźliew
+      folder: DRAFTS/DO_SPRAWDZENIA/OBRAZLIWE
+      text: Obraźliwe
+    anger:
+      action: Wstrzymany - Wzburzenie
+      folder: DRAFTS/DO_SPRAWDZENIA/WZBURZENIE
+      text: Wzburzenie
+    contact_request:
+      action: Wstrzymany - Telefon
+      folder: DRAFTS/KONTAKT/TELEFON
+      text: Prośba o kontakt telefoniczny - klient podał numer telefonu
+    doesnt_apply:
+      action: Wstrzymany - Nie dotyczy
+      folder: DRAFTS/POTENCJALNY_SPAM
+      text: Nie Dotyczy
+    internal_matters:
+      action: Wstrzymany - Nie dotyczy
+      folder: DRAFTS/DO_SPRAWDZENIA
+      text: Sprawy Wewnetrzne Firmy
+    meeting_request:
+      action: Wstrzymany - Spotkanie
+      folder: DRAFTS/KONTAKT/SPOTKANIE
+      text: Prośba o umówienie spotkania
+    message_out:
+      action: Wiadomość wysłana przez pracownika
+      folder: SENT
+      followup_actions:
+        reminder_1:
+          data: '1'
+          text: Ponowny kontakt za
+        reminder_2:
+          data: '2'
+          text: Ponowny kontakt za
+      text: ''
+    no_question:
+      action: Oczekuje
+      folder: SENT/PONOWNY_KONTAKT
+      text: Zakończenie rozmowy - brak pytania
+    reminder_out:
+      action: Wiadomości z przypomnieniem wysłane
+      folder: SENT
+      text: ''
+    valid_question:
+      action: Odpowiedź dostarczona
+      folder: SENT
+      followup_actions:
+        reminder_1:
+          data: '4'
+          text: Ponowny kontakt za
+        reminder_2:
+          data: '6'
+          text: Ponowny kontakt za
+      text: Pytanie o informacje związane firmą
+  signature: "Z udzy poważaniem,\nGrzegorz Barski, \nTwój Doraca Colliers,\ntel: 02748347638"
+  system_context: 'Jesteś pracownikiem firmy handlowej. Obsługujesz poczte e-mail firmy Colliers. Odpowiadasz na e-mail w polu ''answer''. Dopasuj cel pytania w polu ''intent'' zgodnie z podanymi kategoriami. Używaj odpowiedzi do 300 wyrazów, nie halucynuj. Zwróć uwagę na powtarzające się pytania - nie odpowiadaj na nie. Nie umieszczaj podpisu w odpowiedzi. Zawsze dopytaj klienta o szczegóły jego potrzeb. Celem jest zdobycie jak najwięcej szczegółów dotyczących potrzeb klienta. Jeśli osiągnięto ten cel, w drugiej kolejności należy zachęcić klienta do spotkania.
+
+    '
+persona2:
+  context_path: context2.txt
+  email: info@cube-solutions.pl
+  followup_context: 'Jesteś pracownikiem firmy handlowej. Obsługujesz poczte e-mail firmy Colliers. Przypominasz klientowi o braku odpowiedzi na wiadomość. Nawiąż do historii konwersacji, przypomnij o ostatnich pytaniach. Używaj do 200 wyrazów, nie halucynuj. Celem ma być zachęcenie klienta odpowiedzi na potencjalne potrzeby.
+
+    '
+  id: 2
+  intent_context: Czytasz i kategoryzujesz e-mail. W odpowiedzi zamieść tylko jeden z tekstów z listy najbardziej pasujący do intencji wiadomości ->
+  name: Jakub Mucha
+  question_triggers:
+    abusive:
+      action: Wstrzymany - Obraźliew
+      folder: DRAFTS/DO_SPRAWDZENIA/OBRAZLIWE
+      text: Obraźliwe
+    anger:
+      action: Wstrzymany - Wzburzenie
+      folder: DRAFTS/DO_SPRAWDZENIA/WZBURZENIE
+      text: Wzburzenie
+    contact_request:
+      action: Wstrzymany - Telefon
+      folder: DRAFTS/KONTAKT/TELEFON
+      text: Prośba o kontakt telefoniczny - klient podał numer telefonu
+    doesnt_apply:
+      action: Wstrzymany - Nie dotyczy
+      folder: DRAFTS/POTENCJALNY_SPAM
+      text: Nie Dotyczy
+    internal_matters:
+      action: Wstrzymany - Nie dotyczy
+      folder: DRAFTS/DO_SPRAWDZENIA
+      text: Sprawy Wewnetrzne Firmy
+    meeting_request:
+      action: Wstrzymany - Spotkanie
+      folder: DRAFTS/KONTAKT/SPOTKANIE
+      text: Prośba o umówienie spotkania
+    message_out:
+      action: Pierwszy kontakt
+      folder: SENT/PONOWNY_KONTAKT
+      text: ''
+    no_question:
+      action: Oczekuje
+      folder: SENT/PONOWNY_KONTAKT
+      text: Zakończenie rozmowy - brak pytania
+    offer_question:
+      action: Wstrzymany - Cena
+      folder: DRAFTS/CENA
+      text: Zapytanie o ofertę
+    price_question:
+      action: Wstrzymany - Cena
+      folder: DRAFTS/CENA
+      text: Zapytanie o cenę
+    valid_question:
+      action: Odpowiedź dostarczona
+      folder: SENT
+      text: Zapytanie o informacje związane firmą
+  signature: 'Podpisz odpowiedź:  Z poważaniem, Jakub Mucha  Twój Doraca Colliers,  tel: 02748347638
+
+    '
+  system_context: 'Jesteś pracownikiem firmy handlowej. Odpowiadasz na e-mail. Używaj odpowiedzi do 300 wyrazów, nie halucynuj. Nie powtażaj odpowiedzi. W przypadku podobnego pytania z histori, odpowiedz, że odpowiadałeś na pytanie. Jeśli nie ma oczywistej odpowiedzi napisz "/Nie Wiem/". Zawsze dopytaj klienta o szczegóły jego potrzeb.
+
+    '
+  user_context: 'Chcesz wiedzieć kto napisał e-mail. Jeśli można podaj imię, nazwisko lub numer telefonu osoby, która podpisała się w e-mail. Jeśli nie ma wszystkich informacji, podaj te, które są dostępne. Podaj tylko dane osobowe w odpowiedzi, lub ''Nie Wiem''
+
+    '

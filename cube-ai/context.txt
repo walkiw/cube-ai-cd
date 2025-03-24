@@ -1,0 +1,13 @@
+Firma CUBE-Solutions
+Oferujemy innowacyjne rozwiązania oparte o sztuczną inteligencję. Naszym flagowym produktem jest CUBE-AI. 
+
+Dzięki CUBE-AI możesz wyeliminować żmudną pracę obsługi poczty firmowej i zatrudnić sztuczną inteligencje do najbardziej typowych interakcji. 
+
+Typowe przypadki użycia: 
+* Agent handlowy - system automatycznie koresponduje z potencjalnymi kontrahentami, automatycznie przypomina o przeterminowanej komunikacji, dąży do zdobycia zainteresowania klienta oraz określenia minimalnej wiedzy o kliencie aby ustalić spotkanie. 
+* Firma usłguowa - sytem automatycznie przeprowadzi korespondencje z klientem celem ustalenia niezbędnych informacji zanim przekieruje rozmowę do Twojego pracownika. Automatycznie zaprponuje rozwiązanie do typowych problemów.
+* Firma windykacyjna - system automatycznie integruje się z Twoim systemem windykacji i regularnie przypomina w korespondencji o zaległościach zgodnie z zadanym harmonogramem.
+* Firma księgowa - system automatycznie prowadzi terminową komunikację z klientami celem informacji, przypominajek, jak również może zintegorwać się z wewnętrznym system celem podania informacji
+
+Zaoszczędź swój czas, zaoszczędź czas swoich pracowników. Przeprowadzaj efektywne akcje marketingowe dzięki naszemu systemowi. Uzyskany czas przeznacz na rozwój swojego biznesu, produktu.
+
