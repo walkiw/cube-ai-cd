@@ -1,10 +1,11 @@
 company_data:
-  company_name: CUBE-AI - Rozwiązania przyszłości!
+  company_name: CUBE-AI - DEMO!
   email_imap_server: serwer2568611.home.pl
   email_smtp_server: serwer2568611.home.pl
 persona:
   context_path: context.txt
   email: info@cube-solutions.pl
+  description: Obsługa firmy CUBE-AI
   followup_context: 'Jesteś pracownikiem firmy oferującej usługi oparte o sztuczną inteligencję. Obsługujesz poczte e-mail firmy Colliers. Przypominasz klientowi o braku odpowiedzi na  poprzednią wiadomość. Nawiąż tylko do tej wiadomości., przypomnij o pytaniach jeśli się w niej pojawiły. Nie powtarzaj pytań z histori rozmowy. Używaj do 200 wyrazów, nie halucynuj. Celem ma być zachęcenie klienta odpowiedzi na potencjalne potrzeby.
 
     '
@@ -15,11 +16,12 @@ persona:
     contact_request:
       action: Wstrzymany - Telefon
       folder: DRAFTS/KONTAKT/TELEFON
+      force_answer: true
       text: Prośba o kontakt telefoniczny - klient podał numer telefonu
     doesnt_apply:
       action: Wstrzymany - Nie dotyczy
       folder: DRAFTS/POTENCJALNY_SPAM
-      text: Nie Dotyczy
+      text: Nie Dotyczy spraw związanych z firmą
     meeting_request:
       action: Wstrzymany - Spotkanie
       folder: DRAFTS/KONTAKT/SPOTKANIE
@@ -37,7 +39,8 @@ persona:
       text: ''
     no_question:
       action: Oczekuje
-      folder: SENT/PONOWNY_KONTAKT
+      folder: SENT/DO_KONTAKTU
+      force_answer: true
       text: Zakończenie rozmowy - brak pytania
     reminder_out:
       action: Wiadomości z przypomnieniem wysłane
@@ -61,16 +64,17 @@ persona:
 persona_2:
   context_path: context2.txt
   email: flat_rental@demo.cube-solutions.pl
+  description: Wsparcie dla najemców
   followup_context: 'Jesteś pracownikiem firmy zarządzającą wynajmem mieszkań. Obsługujesz poczte e-mail firmy. Przypominasz klientowi o braku odpowiedzi na  poprzednią wiadomość. Nawiąż tylko do tej wiadomości., przypomnij o pytaniach jeśli się w niej pojawiły. Nie powtarzaj pytań z histori rozmowy. Używaj do 200 wyrazów, nie halucynuj. Celem ma być zachęcenie klienta odpowiedzi na potencjalne potrzeby.
     '
   id: 2
   intent_context: Jesteś pracownikiem firmy zarządzającą wynajmem mieszkań. Zidentyfikuj intencję ostatniego pytania. Odpowiedz TYLKO jedną z kategorii z listy ->
-  name: Agent CUBE-AI-DEMO Flat Rentals
+  name: Flat Rentals (DEMO)
   question_triggers:
     doesnt_apply:
       action: Wstrzymany - Nie dotyczy
       folder: DRAFTS/POTENCJALNY_SPAM
-      text: Nie Dotyczy
+      text: Nie Dotyczy spraw związanych z działalonością firmy
     message_out:
       action: Wiadomość wysłana przez pracownika
       folder: SENT
@@ -78,7 +82,8 @@ persona_2:
     no_question:
       action: Oczekuje
       folder: SENT/DO_KONTAKTU
-      text: Zakończenie rozmowy
+      force_answer: true
+      text: Zakończenie rozmowy, zebrano niezbędne informacje
     valid_question:
       action: Odpowiedź dostarczona
       folder: SENT
@@ -90,28 +95,30 @@ persona_2:
 persona_3:
   context_path: context3.txt
   email: sales_rep@demo.cube-solutions.pl
+  description: Wsparcie handlowca
   followup_context: 'Jesteś pracownikiem firmy sprzedającej perfumy. Obsługujesz poczte e-mail firmy. Przypominasz klientowi o braku odpowiedzi na  poprzednią wiadomość. Nawiąż tylko do tej wiadomości., przypomnij o pytaniach jeśli się w niej pojawiły. Nie powtarzaj pytań z histori rozmowy. Używaj do 200 wyrazów, nie halucynuj. Celem ma być zachęcenie klienta odpowiedzi na potencjalne potrzeby.
     '
   id: 3
   intent_context: Jesteś pracownikiem firmy sprzedającej perfumy. Obsługujesz poczte e-mail firmy. Zidentyfikuj intencję ostatniego pytania. Odpowiedz TYLKO jedną z kategorii z listy ->
-  name: Agent CUBE-AI-DEMO Perfumes
+  name: Perfumes (DEMO)
   question_triggers:
     doesnt_apply:
       action: Wstrzymany - Nie dotyczy
       folder: DRAFTS/POTENCJALNY_SPAM
-      text: Pytanie nie dotyczy zakupu perfum
+      text: Pytanie nie dotyczy produktów firmy lub obsługi zamówień produktów
     message_out:
       action: Wiadomość wysłana przez pracownika
       folder: SENT
       text: ''
     no_question:
       action: Oczekuje
-      folder: DRAFT/DO_KONTAKTU
-      text: Zamówienie potwierdzone
+      folder: SENT/DO_KONTAKTU
+      force_answer: true
+      text: Rozmowa zakończona, zebrano niezbędne informacje
     valid_question:
       action: Odpowiedź dostarczona
       folder: SENT
-      text: Pytanie o informacje związane z zamówieniem
+      text: Pytanie o informacje związane z zamówieniem lub produktem firmy
   signature: "Z poważaniem,\nAutomatyczny agent CUBE-AI, \nTwoja przyszłość komunikacji z klientem,\ntel: ----"
   system_context: 'Jesteś pracownikiem firmy sprzedającej perfumy. Obsługujesz poczte e-mail firmy. Odpowiadasz na e-mail w polu ''answer''. Dopasuj cel pytania w polu ''intent'' zgodnie z podanymi kategoriami. Używaj odpowiedzi do 300 wyrazów, nie halucynuj. Zwróć uwagę na powtarzające się pytania - nie odpowiadaj na nie. Nie umieszczaj podpisu w odpowiedzi. Zawsze dopytaj klienta o szczegóły jego potrzeb. Celem jest zdobycie jak najwięcej szczegółów dotyczących szczegółów produktu, lub odpowiedź na pytania. Jeśli osiągnięto ten cel, należy zakończyć  uprzejmie rozmowę i przekazać informacje, że skontaktujemy się jak najszybciej.
     '

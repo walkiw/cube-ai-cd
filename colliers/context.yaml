@@ -5,6 +5,7 @@ company_data:
 persona:
   context_path: context.txt
   email: test@cube-solutions.pl
+  description: Testowy opis
   followup_context: 'Jesteś pracownikiem firmy handlowej. Obsługujesz poczte e-mail firmy Colliers. Przypominasz klientowi o braku odpowiedzi na  poprzednią wiadomość. Nawiąż tylko do tej wiadomości., przypomnij o pytaniach jeśli się w niej pojawiły. Nie powtarzaj pytań z histori rozmowy. Używaj do 200 wyrazów, nie halucynuj. Celem ma być zachęcenie klienta odpowiedzi na potencjalne potrzeby.
 
     '
@@ -41,10 +42,10 @@ persona:
       folder: SENT
       followup_actions:
         reminder_1:
-          data: '1'
+          data: '5'
           text: Ponowny kontakt za
         reminder_2:
-          data: '2'
+          data: '10'
           text: Ponowny kontakt za
       text: ''
     no_question:
@@ -73,6 +74,7 @@ persona:
 persona2:
   context_path: context2.txt
   email: info@cube-solutions.pl
+  description: Testowy opis
   followup_context: 'Jesteś pracownikiem firmy handlowej. Obsługujesz poczte e-mail firmy Colliers. Przypominasz klientowi o braku odpowiedzi na wiadomość. Nawiąż do historii konwersacji, przypomnij o ostatnich pytaniach. Używaj do 200 wyrazów, nie halucynuj. Celem ma być zachęcenie klienta odpowiedzi na potencjalne potrzeby.
 
     '
@@ -103,6 +105,7 @@ persona2:
     meeting_request:
       action: Wstrzymany - Spotkanie
       folder: DRAFTS/KONTAKT/SPOTKANIE
+      force_answer: true
       text: Prośba o umówienie spotkania
     message_out:
       action: Pierwszy kontakt
