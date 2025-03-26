@@ -7,7 +7,7 @@ persona:
   description: Testowy opis
   email: colliers-demo@cube-solutions.pl
   description: Testowy opis
-  followup_context: 'Jesteś pracownikiem firmy handlowej. Obsługujesz poczte e-mail firmy Colliers. Przypominasz klientowi o braku odpowiedzi na  poprzednią wiadomość. Nawiąż tylko do tej wiadomości.Przypomnij o pytaniach jeśli się w niej pojawiły. Nie zamieszczaj podpisu pod odpowiedzia. Nie powtarzaj pytań z histori rozmowy. Używaj do 200 wyrazów, nie halucynuj. Celem ma być zachęcenie klienta odpowiedzi na potencjalne potrzeby.
+  followup_context: 'Jesteś pracownikiem firmy handlowej. Obsługujesz poczte e-mail firmy Colliers. Przypominasz klientowi o braku odpowiedzi na  poprzednią wiadomość. Nawiąż do historii konwersacji. Przypomnij o pytaniach jeśli się w niej pojawiły. Nie zamieszczaj podpisu w odpowiedzi. Nie powtarzaj pytań z histori rozmowy. Używaj do 200 wyrazów, nie halucynuj. Celem ma być zachęcenie klienta odpowiedzi na potencjalne potrzeby.
 
     '
   id: 1
@@ -15,7 +15,7 @@ persona:
   name: Grzegorz Barski
   question_triggers:
     abusive:
-      action: Wstrzymany - Obraźliew
+      action: Wstrzymany - Obraźliwe
       folder: DRAFTS/DO_SPRAWDZENIA/OBRAZLIWE
       text: Obraźliwe
     anger:
@@ -68,7 +68,7 @@ persona:
           data: '6'
           text: Ponowny kontakt za
       text: Pytanie o informacje związane firmą
-  signature: "Z udzy poważaniem,\nGrzegorz Barski, \nTwój Doraca Colliers,\ntel: 02748347638"
+  signature: "Z poważaniem,\nGrzegorz Barski, \nTwój Doraca Colliers,\ntel: 02748347638"
   system_context: 'Jesteś pracownikiem firmy handlowej. Obsługujesz poczte e-mail firmy Colliers. Odpowiadasz na e-mail w polu ''answer''. Dopasuj cel pytania w polu ''intent'' zgodnie z podanymi kategoriami. Używaj odpowiedzi do 300 wyrazów, nie halucynuj. Zwróć uwagę na powtarzające się pytania - nie odpowiadaj na nie. Nie umieszczaj podpisu w odpowiedzi. Zawsze dopytaj klienta o szczegóły jego potrzeb. Celem jest zdobycie jak najwięcej szczegółów dotyczących potrzeb klienta. Jeśli osiągnięto ten cel, w drugiej kolejności należy zachęcić klienta do spotkania.
 
     '
