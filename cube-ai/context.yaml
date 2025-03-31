@@ -3,7 +3,7 @@ company_data:
   email_imap_server: serwer2568611.home.pl
   email_smtp_server: serwer2568611.home.pl
 persona:
-  company_context: /home/ubuntu/code/cube-ai/cd/cube-ai/context.txt
+  company_context: /home/ubuntu/code/cube-ai-cd/cube-ai/context.txt
   email: info@cube-solutions.pl
   description: Obsługa firmy CUBE-AI
   followup_context_private: puste
@@ -65,7 +65,7 @@ persona:
     '
 
 persona_2:
-  company_context: /home/ubuntu/code/cube-ai/cd/cube-ai/context2.txt
+  company_context: /home/ubuntu/code/cube-ai-cd/cube-ai/context2.txt
   email: flat_rental@demo.cube-solutions.pl
   description: Wsparcie dla najemców
   followup_context_private: puste
@@ -98,7 +98,7 @@ persona_2:
     '
 
 persona_3:
-  company_context: /home/ubuntu/code/cube-ai/cd/cube-ai/context3.txt
+  company_context: /home/ubuntu/code/cube-ai-cd/cube-ai/context3.txt
   email: sales_rep@demo.cube-solutions.pl
   description: Wsparcie handlowca
   followup_context_private: puste
