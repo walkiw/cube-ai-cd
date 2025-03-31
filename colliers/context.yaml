@@ -3,7 +3,7 @@ company_data:
   email_imap_server: serwer2568611.home.pl
   email_smtp_server: serwer2568611.home.pl
 persona:
-  company_context: /home/ubuntu/code/cube-ai/cd/colliers/context.txt
+  company_context: /home/ubuntu/code/cube-ai-cd/colliers/context.txt
   description: Testowy opis
   email: test@cube-solutions.pl
   description: Testowy opis
@@ -75,7 +75,7 @@ persona:
 
     '
 persona2:
-  company_context: /home/ubuntu/code/cube-ai/cd/colliers/context.txt
+  company_context: /home/ubuntu/code/cube-ai-cd/colliers/context.txt
   followup_context_private: puste
   role_context_private: puste
   email: wsparcie@colliers-demo.cube-solutions.pl
