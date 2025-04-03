@@ -1,0 +1,65 @@
+company_data:
+  company_name: TopQ
+  email_imap_server: serwer2568611.home.pl
+  email_smtp_server: serwer2568611.home.pl
+persona:
+  company_context: /home/ubuntu/code/cube-ai-cd/topq/context.txt
+  email: demo@topq.cube-solutions.pl
+  description: Obsługa firmy TOPQ
+  followup_context_private: puste
+  role_context_private: puste  
+  followup_context: 'Jesteś pracownikiem firmy TopQ. Obsługujesz poczte e-mail. Nie podpisuj odpowiedzi. Przypominasz klientowi o braku odpowiedzi na  poprzednią wiadomość. Nawiąż tylko do tej wiadomości., przypomnij o pytaniach jeśli się w niej pojawiły. Nie powtarzaj pytań z histori rozmowy. Używaj do 200 wyrazów, nie halucynuj. Celem ma być zachęcenie klienta odpowiedzi na potencjalne potrzeby.
+
+    '
+  id: 1
+  intent_context: Jesteś pracownikiem firmy TopQ. Obsługujesz poczte e-mail. Zidentyfikuj intencję ostatniego pytania. Odpowiedz TYLKO jedną z kategorii z listy ->
+  name: Agent TopQ
+ 
+  question_triggers:
+    contact_request:
+      action: Wstrzymany - Telefon
+      folder: DRAFTS/KONTAKT/TELEFON
+      force_answer: true
+      text: Prośba o kontakt telefoniczny - klient podał numer telefonu
+    doesnt_apply:
+      action: Wstrzymany - Nie dotyczy
+      folder: DRAFTS/POTENCJALNY_SPAM
+      text: Nie Dotyczy spraw związanych z firmą
+    meeting_request:
+      action: Wstrzymany - Spotkanie
+      folder: DRAFTS/KONTAKT/SPOTKANIE
+      text: Prośba o umówienie spotkania
+    message_out:
+      action: Wiadomość wysłana przez pracownika
+      folder: SENT
+      followup_actions:
+        reminder_1:
+          data: '6000'
+          text: Ponowny kontakt za
+        reminder_2:
+          data: '12000'
+          text: Ponowny kontakt za
+      text: ''
+    no_question:
+      action: Oczekuje
+      folder: SENT/DO_KONTAKTU
+      force_answer: true
+      text: Zakończenie rozmowy - brak pytania
+    reminder_out:
+      action: Wiadomości z przypomnieniem wysłane
+      folder: SENT
+      text: ''
+    valid_question:
+      action: Odpowiedź dostarczona
+      folder: SENT
+      followup_actions:
+        reminder_1:
+          data: '6000'
+          text: Ponowny kontakt za
+        reminder_2:
+          data: '12000'
+          text: Ponowny kontakt za
+      text: Pytanie o informacje związane firmą
+  signature: "Z poważaniem,\nAutomatyczny agent CUBE-AI, \nTwoja przyszłość komunikacji z klientem,\ntel: ----"
+  role_context: 'JesJesteś pracownikiem firmy TopQ. Obsługujesz poczte e-mail. Odpowiadasz na e-mail w polu ''answer''. Nie podpisuj odpowiedzi. Dopasuj cel pytania w polu ''intent'' zgodnie z podanymi kategoriami. Używaj odpowiedzi do 300 wyrazów, nie halucynuj. Zwróć uwagę na powtarzające się pytania - nie odpowiadaj na nie. Nie umieszczaj podpisu w odpowiedzi. Zawsze dopytaj klienta o szczegóły jego potrzeb. Celem jest zdobycie jak najwięcej szczegółów dotyczących potrzeb klienta. Jeśli osiągnięto ten cel, w drugiej kolejności należy zachęcić klienta do spotkania.
+    '
