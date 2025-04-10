@@ -35,6 +35,7 @@ persona:
         reminder_1:
           data: '6'
           text: Ponowny kontakt za
+      text: ''
     no_question:
       action: Oczekuje
       folder: SENT/DO_KONTAKTU
