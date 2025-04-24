@@ -1,0 +1,56 @@
+company_data:
+  company_name: COMPANY NAME
+  email_imap_server: tbd
+  email_smtp_server: tbd
+persona:
+  company_context: /home/ubuntu/code/cube-ai-cd/vanilla/context.txt 
+  email: tbd
+  description: tbd
+  followup_context_private: 'Przypominasz klientowi o braku odpowiedzi na  poprzednią wiadomość. Nawiąż tylko do ostatnich nie podjętych wiadomości. Przypomnij o nie odpowiedzianych pytaniach jeśli się w nich pojawiły. Nie powtarzaj pytań z histori rozmowy. Używaj do 200 wyrazów, nie halucynuj. Celem ma być zachęcenie klienta odpowiedzi na potencjalne potrzeby'
+  role_context_private: 'Odpowiadasz na e-mail w polu ''answer''. Dopasuj cel pytania w polu ''intent'' zgodnie z podanymi kategoriami. Używaj odpowiedzi do 300 wyrazów, nie halucynuj. Zwróć uwagę na powtarzające się pytania - nie odpowiadaj na nie. Nie umieszczaj podpisu w odpowiedzi.'
+  followup_context: tbd
+  role_context: tbd
+  id: 1
+  name: tbd
+ 
+  question_triggers:
+    contact_request:
+      action: Wstrzymany - Telefon
+      folder: DRAFTS/KONTAKT/TELEFON
+      force_answer: true
+      text: Prośba o kontakt telefoniczny - klient podał numer telefonu
+    doesnt_apply:
+      action: Wstrzymany - Nie dotyczy
+      folder: DRAFTS/POTENCJALNY_SPAM
+      text: Nie Dotyczy spraw związanych z firmą
+    meeting_request:
+      action: Wstrzymany - Spotkanie
+      folder: DRAFTS/KONTAKT/SPOTKANIE
+      text: Prośba o umówienie spotkania
+    message_out:
+      action: Wiadomość wysłana przez pracownika
+      folder: SENT
+      followup_actions:
+        reminder_1:
+          data: '6000'
+          text: Ponowny kontakt za
+      text: ''
+    no_question:
+      action: Oczekuje
+      folder: SENT/DO_KONTAKTU
+      force_answer: true
+      text: Zakończenie rozmowy - brak pytania
+    reminder_out:
+      action: Wiadomości z przypomnieniem wysłane
+      folder: SENT
+      text: ''
+    valid_question:
+      action: Odpowiedź dostarczona
+      folder: SENT
+      followup_actions:
+        reminder_1:
+          data: '6000'
+          text: ''
+      text: Pytanie o informacje związane firmą
+  signature: "Z poważaniem,\nAutomatyczny agent CUBE-AI, \nTwoja przyszłość komunikacji z klientem,\ntel: ----"
+  
